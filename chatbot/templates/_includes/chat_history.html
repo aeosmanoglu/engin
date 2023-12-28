@@ -1,0 +1,19 @@
+{% for speaker, message, time in chat_history %}
+<div class="{{ speaker | lower }} card {% if speaker == 'Engin' %}text-bg-light mb-5{% else %}mb-3{% endif %}">
+	<div class="row g-0">
+		<div class="col-md-auto">
+			<div class="card-body fw-semibold pb-sm-0">{{ speaker }}</div>
+		</div>
+		<div class="col">
+			<div class="card-body">{{ message }}</div>
+		</div>
+	</div>
+
+	{% if speaker == 'Engin' %}
+	<div class="card-footer text-muted text-end">
+		<small>{{ time }}</small>
+	</div>
+	{% endif %}
+</div>
+{% endfor %}
+<div class="py-4 py-md-5"></div>
